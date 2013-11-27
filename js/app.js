@@ -54,13 +54,13 @@ App.prototype._createField = function(rows, cols) {
     for(var j = 0; j < rows; j++) {
       var tdElement = $('<td></td>');
       tdElement.text(shuffledNumbers.shift());
-      trElement.appendChild(tdElement);
+      trElement.append(tdElement);
       tdElement.click(function(e){
         var target = e.currentTarget;
         self.clicked(target);
       });
     }
-    tableElement.appendChild(trElement);
+    tableElement.append(trElement);
   }
 
 };
@@ -86,7 +86,7 @@ App.prototype.end = function() {
   var currentResultElement = $('<li></li>');
   var time = $('#time').text();
   currentResultElement.text(this.challengeNumber + '回目::' + time + '秒');
-  resultElement.appendChild(currentResultElement);
+  resultElement.appnedTo(currentResultElement);
 
   this.reset();
 
@@ -120,7 +120,7 @@ App.prototype.clicked = function(target) {
       //ゲームスタート
       this.start();
     }
-    target.addClass('selected');
+    $(target).addClass('selected');
     this.nextNumber++;
   }
 
