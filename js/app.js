@@ -86,7 +86,7 @@ App.prototype.end = function() {
   var currentResultElement = $('<li></li>');
   var time = $('#time').text();
   currentResultElement.text(this.challengeNumber + '回目::' + time + '秒');
-  resultElement.appnedTo(currentResultElement);
+  resultElement.append(currentResultElement);
 
   this.reset();
 
